@@ -1,0 +1,54 @@
+services:
+  # Data
+  postgres_db:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    posts:
+      - 5432:5432
+    volumes:
+      - ./dbfiles:/docker-entrypoint-initdb.dbfiles
+      - ./postgres_data:/var/lib/postgresql/data # ruta_externa:ruta_interna(contenedor)
+    enviroment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: postgres
+
+  # Database admin service
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    depends_on:
+      - postgres_db
+    ports:
+      - 9090:8080
+
+  # Billing App Backend Service
+  Billingapp_back:
+    build:
+      context: ./java # A partir de donde va a leer el archivo Dockerfile
+      args:
+        - JAR_FILE=*.jar
+        - DB_PASSWORD=qwerty
+    container_name: Billingapp-back
+    # Variables de entorno
+    # (Xms) Memoria minima global asignada
+    # (Xmx) Memoria maxima globla asignada
+    enviroment:
+      - JAVA_OPTS=
+          -Xms256M
+          -Xmx256M
+    depends_on:
+      - postgres_db
+    ports:
+      - 8080:8080
+  # Billing App Frontend Service
+  Billingapp_front:
+    build: 
+      context: ./angular
+    container_name: Billingapp_front
+    depends_on:
+      - billingapp_back
+    ports:
+      - 80:80

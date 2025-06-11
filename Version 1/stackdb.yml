@@ -1,0 +1,22 @@
+services:
+  # nombre del servicio
+  db:
+    container_name: postgres # Nombre del contenedor
+    image: postgres # Imagen a Descargar
+    restart: always
+    ports:
+      - 5432:5432 # puerto externo (docker) : puerto interno
+    enviroment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: postgres
+
+# Crear el servicio "adminer" para crear el contenedor
+adminer:
+  container_name: adminer
+  image: adminer:latest
+  restart: always
+  depends_on:
+    - db
+  ports:
+    - 9090:8080
