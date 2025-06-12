@@ -1,0 +1,34 @@
+services:
+  
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: always
+    posts:
+      - 9090:80
+    enviroment:
+      - PMA_ARBITRARY=1
+
+  mysql-db:
+    container_name: mysql-db
+    command: --default-authentication-plugin=mysql_native_password
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    volumes:
+      - ./dbfiles:/docker-entrrypoint-initdb.d
+      - ./mysql_data:/var/lib/mysql
+    enviroment:
+      - MYSQL_ROOT_PASSWORD=qwerty
+      - MYSQL_DATABASE=sistema_ventas_db
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+
+  sistema-ventas-back:
+    build:
+      context: ./sistema-ventas-back
+    container_name: sistema-ventas-back
+    ports:
+      - 8080:3000
+    depends-on:
+      - mysql-db

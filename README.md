@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/LogoUTNG.png" alt="Creación del entorno virtual" width="400"/>
+  <img src="images/LogoUTNG.png" width="400"/>
 </p> 
 <p align="center">INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN ÁREA REDES INTELIGENTES Y CIBERSEGURIDAD</p>
 <p align="center">Automatización de Infraestructura Digital</p>
@@ -8,9 +8,35 @@
 <p align="center">Actividad 1. Archivo README </p>
 <p align="center">Autor: Reyna Yazmin Ríos Martínez</p>
 <p align="center">GIRI5091</p>
-<p align="right">Dolores Hidalgo C. I.N., Gto a 11 de junio de 2025</p>
+<p align="right">Dolores Hidalgo C. I.N., Gto a 12 de junio de 2025</p>
 
-# Actividad 1. Archivo README 
+<h1 align="center"> Actividad 1. Archivo README </h1> 
+
+# Índice
+1. [Introducción](#introducción)
+2. [Docker](#docker)
+    - [Docker Engine](#docker-engine)
+    - [Docker Compose](#docker-compose)
+    - [Docker Swagger](#docker-swagger)
+3. [Instalación técnica de docker](#instalación-técnica-de-docker)
+    - [Instalación](#instalación)
+    - [Requistos previos](#requisistos-previos)
+    - [Comandos Básicos](#comandos-básicos)
+        - [Crear imagen a partir de un archivo Dockerfile](#crear-imagen-a-partir-de-un-archivo-dockerfile)
+        - [Levantar un contenedor a partir de una imagen](#levantar-un-contenedor-a-partir-de-una-imagen)
+4. [Instalación técnica de VSCode](#instalación-técnica-de-vscode)
+    - [¿Qué es VSCode?](#qué-es-vscode)
+    - [Pasos a seguir](#pasos-a-seguir)
+5. [Instalación técnica de Git](#instalación-técnica-de-git)
+    - [¿Qué es Git?](#qué-es-git)
+    - [Instalación en Ubuntu/Linux](#instalación-en-ubuntulinux)
+    - [Instalación en Windows](#instalación-en-windows)
+6. [Ejecutar la imagen hello-world en Docker](#ejecutar-la-imagen-hello-world-en-docker)
+    - [Objetivo](#objetivo)
+    - [¿Qué hace este comando?](#qué-hace-este-comando)
+      - [Si la imagen no está en tu sistema...](#si-la-imagen-no-está-en-tu-sistema)
+    - [Resultado esperado:](#resultado-esperado)
+7. [Conclusión](#conclusión)
 
 # Introducción
 <p style="text-align: justify;">
@@ -25,14 +51,26 @@
 
 # Docker 
 
+<p align="center">
+  <img src="images/Docker.png" alt="Creación del entorno virtual" width="400"/>
+</p>
+
 ## Docker Engine
 <p style="text-align: justify;">
 Docker Engine es una plataforma de contenedores liviana que permite desarrollar, empaquetar y ejecutar aplicaciones en entornos aislados llamados contenedores. Es el componente central del ecosistema Docker.
 </p>
 
-## Docker Compose. 
+<p align="center">
+  <img src="images/Docker-Engine.png" alt="Creación del entorno virtual" width="400"/>
+</p>
+
+## Docker Compose
 <p style="text-align: justify;">
 Docker Compose es una herramienta oficial de Docker que permite definir y ejecutar múltiples contenedores de forma simultánea mediante un archivo de configuración YAML. Es ideal para entornos donde varias aplicaciones o servicios deben correr juntas, como bases de datos, servidores web y backends.
+</p>
+
+<p align="center">
+  <img src="images/Docker-Compose.png" alt="Creación del entorno virtual" width="400"/>
 </p>
 
 ## Docker Swagger
@@ -40,10 +78,13 @@ Docker Compose es una herramienta oficial de Docker que permite definir y ejecut
 Swagger (ahora parte del ecosistema OpenAPI) es una herramienta que permite documentar, diseñar, visualizar y probar APIs RESTful de forma interactiva. Combinado con Docker, puedes levantar rápidamente una interfaz gráfica para visualizar y probar tu API sin necesidad de instalar Swagger localmente.
 </p>
 
-## INSTALACIÓN
-Ir a https://docs.docker.com/engine/install/ubuntu/ y seguir las instrucciones.
+<p align="center">
+  <img src="images/Docker Swagger.jpg" alt="Creación del entorno virtual" width="400"/>
+</p>
 
 # Instalación técnica de docker.
+### Instalación
+Ir a https://docs.docker.com/engine/install/ubuntu/ y seguir las instrucciones.
 ## Requisistos previos
 - Sistema operativo: Ubuntu 20.04 / 22.04 (o similar).
 - Privilegios de administrador (sudo).
@@ -125,15 +166,12 @@ docker rm [nombre o ID]
 docker image rm [nombre o ID]
 ```
 
-# Repositorio de Docker
-[Repositorio](https://hub.docker.com/)
-
-## Crear imagen a partir de un archivo Dockerfile
+### Crear imagen a partir de un archivo Dockerfile
 ``` shell
 docker buil -t nameapp:tag --no-cache --build-arg JAR_FILE=target/*.jar .
 ```
 
-## Levantar un contenedor a partir de una imagen
+### Levantar un contenedor a partir de una imagen
 ``` shell
 docker run -p 80:80 -p 8080:8080 --name containername
 ```
@@ -144,6 +182,7 @@ docker run -p 80:80 -p 8080:8080 --name containername
 Visual Studio Code (VSCode) es un editor de código fuente desarrollado por Microsoft, muy usado para programar y trabajar con tecnologías como Docker, Git, Node.js, Python, etc. Es ligero, extensible y compatible con Linux, Windows y macOS.
 </p>
 
+## Pasos a seguir
 1. **Actualiza los repositorios e instala dependencias:**
 ``` shell
 sudo apt update
@@ -173,7 +212,7 @@ sudo apt install code
 ``` shell
 code --version
 ```
-# Instalación técnica de Git. 
+# Instalación técnica de Git
 ## ¿Qué es Git?
 <p style="text-align: justify;">
 Git es un sistema de control de versiones distribuido, utilizado para rastrear cambios en archivos de código fuente, coordinar el trabajo en equipo y gestionar versiones de proyectos de software. Es fundamental para trabajar con plataformas como GitHub.
@@ -216,6 +255,9 @@ git version 2.34.1
     ``` shell
     git --version
     ```
+<p align="center">
+  <img src="images/git-version.png" width="400"/>
+</p> 
 
 # Ejecutar la imagen hello-world en Docker
 ## Objetivo:
@@ -247,12 +289,20 @@ This message shows that your installation appears to be working correctly.
 ...
 ```
 
+<p align="center">
+  <img src="images/Hello-World.png" alt="Creación del entorno virtual" width="400"/>
+</p> 
+
 # Conclusión 
 <p style="text-align: justify;">
-
+Durante el desarrollo de esta unidad, se logró implementar exitosamente un entorno de automatización de redes utilizando herramientas modernas como Docker Engine, Docker Compose y Swagger UI. La instalación técnica de herramientas clave como Visual Studio Code, Git y Docker fue documentada paso a paso, lo que permitió establecer una base sólida para la creación y gestión de contenedores de forma eficiente.
 </p>
-
-Imagenes
-<img src="images/1.png"/>
-
-<img width="50%" src="images/1.png"/>
+<p style="text-align: justify;">
+Se realizaron pruebas prácticas para verificar el funcionamiento correcto del entorno, como la ejecución de la imagen hello-world, la creación y despliegue de contenedores mediante archivos docker-compose.yml, así como la construcción de imágenes personalizadas usando Dockerfile tanto para el backend como para el frontend de una aplicación web. Estas prácticas permitieron comprender mejor el flujo de trabajo en entornos contenedorizados y facilitaron la visualización y prueba de servicios API mediante Swagger.
+</p>
+<p style="text-align: justify;">
+Uno de los hallazgos más relevantes fue reconocer la ventaja que ofrece Docker para separar servicios en contenedores independientes, facilitando el mantenimiento, escalabilidad y portabilidad de los proyectos. Además, el uso de Git como sistema de control de versiones y su integración con GitHub permitió gestionar los cambios del proyecto de forma organizada y colaborativa.
+</p>
+<p style="text-align: justify;">
+En resumen, este trabajo permitió aplicar conocimientos técnicos de forma práctica y desarrollar habilidades fundamentales para la administración de infraestructura digital moderna, lo que representa un paso importante hacia la profesionalización en entornos DevOps y de redes inteligentes.
+</p>
