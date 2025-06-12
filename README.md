@@ -37,6 +37,7 @@
       - [Si la imagen no está en tu sistema...](#si-la-imagen-no-está-en-tu-sistema)
     - [Resultado esperado:](#resultado-esperado)
 7. [Conclusión](#conclusión)
+8. [Bibliografía](#bibliografía)
 
 # Introducción
 <p style="text-align: justify;">
@@ -306,3 +307,13 @@ Uno de los hallazgos más relevantes fue reconocer la ventaja que ofrece Docker 
 <p style="text-align: justify;">
 En resumen, este trabajo permitió aplicar conocimientos técnicos de forma práctica y desarrollar habilidades fundamentales para la administración de infraestructura digital moderna, lo que representa un paso importante hacia la profesionalización en entornos DevOps y de redes inteligentes.
 </p>
+
+# Bibliografía
+
+    “Ubuntu.” (2025, May 21). Docker Documentation. https://docs.docker.com/engine/install/ubuntu/
+
+    Kumar, P. (2024, October 20). How to install Docker on Linux Mint 22 or 21 Step-by-Step. LinuxTechi.
+        https://www.linuxtechi.com/how-to-install-docker-on-linux-mint/
+
+    Ratliff, S. (2025, May 30). Docker: Accelerated Container Application Development. 
+        Docker. https://www.docker.com/
