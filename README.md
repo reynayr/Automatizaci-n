@@ -41,7 +41,7 @@
 # Introducción
 <p style="text-align: justify;">
   La automatización de redes es un pilar fundamental en la gestión de entornos tecnológicos modernos, permitiendo una mayor eficiencia, menor margen de error y mejor administración de recursos. Este reporte detalla el procedimiento de instalación y configuración de las herramientas necesarias para implementar flujos de automatización, incluyendo la preparación de un entorno de desarrollo funcional.
-  En particular, se abordan las herramientas <strong>Docker Engine</strong>, <strong>Docker Compose</strong> y <strong>Docker Swagger</strong>, ampliamente utilizadas para la creación y orquestación de contenedores, junto con el uso de **Visual Studio Code** como editor de código y otros complementos esenciales.  
+  En particular, se abordan las herramientas <strong>Docker Engine</strong>, <strong>Docker Compose</strong> y <strong>Docker Swagger</strong>, ampliamente utilizadas para la creación y orquestación de contenedores, junto con el uso de <strong>Visual Studio Code</strong> como editor de código y otros complementos esenciales.  
   El reporte incluye la descripción de cada herramienta, la instalación técnica paso a paso de las dependencias y entornos necesarios (como Git y plugins de VS Code), así como la ejecución de pruebas de verificación para asegurar el correcto funcionamiento de cada componente.  
   Además, se muestran evidencias gráficas que sustentan la realización de cada paso y los resultados obtenidos, garantizando la transparencia del proceso.  
   Finalmente, se expone una conclusión que recopila los hallazgos más importantes y se presenta una bibliografía en estilo APA7, la cual recopila los recursos de la comunidad de colaboración y referencias académicas consultadas.  
