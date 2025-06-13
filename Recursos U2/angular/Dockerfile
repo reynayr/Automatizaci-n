@@ -12,25 +12,8 @@ COPY mime.types /etc/nginx/mime.types
 
 COPY ./sistema-ventas-front /usr/share/nginx/html
 
-
-# Instalamos OpenJDK 17
-RUN apk --no-cache add openjdk17-jre
-
-# Definimos la variable de entorno JAVA_HOME
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
-ENV PATH $JAVA_HOME/bin:$PATH
-
-# Verificamos la instalación
-RUN java -version
-
-
-#Install java microservice
-ENV JAVA_OPTS=""
-ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
-
 #The ports 7080 for backend-app and 80 for web app
-EXPOSE 80 7080
+EXPOSE 80
 
 #Ejecutar el comando: CMD[“nginx”, “-g”, “daemon off;”]
-CMD [ “nginx”, “-g”, “daemon off;” ]
+CMD [ "nginx", "-g", "daemon off;" ]
