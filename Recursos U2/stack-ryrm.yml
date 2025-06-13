@@ -48,5 +48,3 @@ services:
       - "80:80"
     depends_on:
       - sistema-ventas-back
-    networks:
-      - backend
