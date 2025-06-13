@@ -7,8 +7,10 @@ VOLUME /tmp
 RUN rm -rf /usr/share/nginx/html/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY dist/billingApp /usr/share/nginx/html
+
 COPY mime.types /etc/nginx/mime.types
+
+COPY ./sistema-ventas-front /usr/share/nginx/html
 
 
 # Instalamos OpenJDK 17
@@ -31,6 +33,9 @@ ADD ${JAR_FILE} app.jar
 COPY appshell.sh appshell.sh
 
 #The ports 7080 for backend-app and 80 for web app
-EXPOSE 80 
+EXPOSE 80 7080
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh", "/appshell.sh"]
+
+#Ejecutar el comando: CMD[“nginx”, “-g”, “daemon off;”]
+CMD [ “nginx”, “-g”, “daemon off;” ]
