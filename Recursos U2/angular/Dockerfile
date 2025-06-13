@@ -1,21 +1,19 @@
-# Usar la imagen de nginx:stable-alpine
 FROM nginx:stable-alpine
 
-# Crear el volumen /temp
-VOLUME /temp
+ # use a volume is mor efficient and speed that filesystem
+VOLUME /tmp
 
-# Borrar los archivos de nginx
+#Install web app on nginx server
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copiar los archivos hacia el contenedor
 COPY nginx.conf /etc/nginx/nginx.conf
+
 COPY mime.types /etc/nginx/mime.types
 
-# Copiar los archivos del front
 COPY sistema-ventas-front/ /usr/share/nginx/html/
 
-# Exponer el puerto 80
+#The ports 7080 for backend-app and 80 for web app
 EXPOSE 80
 
-# Ejecutar en el CMD el comando nginx -g daemon off;
-CMD ["nginx", "-g", "daemon off;"]
+#Ejecutar el comando: CMD[“nginx”, “-g”, “daemon off;”]
+CMD [ "nginx", "-g", "daemon off;" ]
