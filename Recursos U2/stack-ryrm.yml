@@ -2,9 +2,9 @@ services:
 
   phpmyadmin:
     container_name: phpmyadmin
-    image: phpmyadmin:latest
+    image: phpmyadmin
     restart: always
-    posts:
+    ports:
       - 9090:80
     environment:
       - PMA_ARBITRARY=1
@@ -30,7 +30,7 @@ services:
     container_name: sistema-ventas-back
     ports:
       - 8080:3000
-    depends-on:
+    depends_on:
       - mysql-db
 
   sistema-ventas-front:
