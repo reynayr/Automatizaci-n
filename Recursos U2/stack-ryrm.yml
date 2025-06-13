@@ -1,8 +1,8 @@
 services:
-  
+
   phpmyadmin:
     container_name: phpmyadmin
-    image: phpmyadmin
+    image: phpmyadmin:latest
     restart: always
     posts:
       - 9090:80
