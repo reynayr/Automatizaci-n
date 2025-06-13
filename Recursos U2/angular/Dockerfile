@@ -35,7 +35,5 @@ COPY appshell.sh appshell.sh
 #The ports 7080 for backend-app and 80 for web app
 EXPOSE 80 7080
 
-ENTRYPOINT ["sh", "/appshell.sh"]
-
 #Ejecutar el comando: CMD[“nginx”, “-g”, “daemon off;”]
 CMD [ “nginx”, “-g”, “daemon off;” ]
