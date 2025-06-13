@@ -31,10 +31,6 @@ ADD ${JAR_FILE} app.jar
 COPY appshell.sh appshell.sh
 
 #The ports 7080 for backend-app and 80 for web app
-EXPOSE 80 7080
+EXPOSE 80 
 
-ENTRYPOINT ["sh", "/appshell.sh"]
-
-
-
-
+CMD ["nginx", "-g", "daemon off;"]

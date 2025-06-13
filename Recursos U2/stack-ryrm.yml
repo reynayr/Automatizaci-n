@@ -25,10 +25,19 @@ services:
       - MYSQL_PASSWORD=admin
 
   sistema-ventas-back:
-    build:
+    build: 
       context: ./sistema-ventas-back
     container_name: sistema-ventas-back
     ports:
       - 8080:3000
     depends-on:
       - mysql-db
+
+  sistema-ventas-front:
+    build:
+      context: ./sistema-ventas-front
+    container_name: sistema-ventas-front
+    ports:
+      - 80:80
+    depends_on:   
+      - sistema-ventas-back
