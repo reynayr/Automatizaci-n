@@ -36,8 +36,15 @@
     - [¿Qué hace este comando?](#qué-hace-este-comando)
       - [Si la imagen no está en tu sistema...](#si-la-imagen-no-está-en-tu-sistema)
     - [Resultado esperado:](#resultado-esperado)
-7. [Conclusión](#conclusión)
-8. [Bibliografía](#bibliografía)
+7. [Ejecutar un archivo “.YML”](#ejecutar-un-archivo-yml)
+    - [¿Qué es un archivo .yml?](#qué-es-un-archivo-yml)
+    - [Comando](#comando)
+      - [Explicación](#explicación)
+      - [Resultado esperado de Docker Compose](#resultado-esperado-de-docker-compose)
+    - [Verifica que los contenedores están corriendo](#verifica-que-los-contenedores-están-corriendo)
+      - [Resultado esperado de Contenedores](#resultado-esperado-de-contenedores)
+8. [Conclusión](#conclusión)
+9. [Bibliografía](#bibliografía)
 
 # Introducción
 <p style="text-align: justify;">
@@ -289,9 +296,41 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ...
 ```
-
 <p align="center">
   <img src="images/Hello-World.png" alt="Creación del entorno virtual" width="400"/>
+</p> 
+
+
+# Ejecutar un archivo “.YML”
+
+## ¿Qué es un archivo .yml?
+<p style="text-align: justify;">
+Un archivo .yml (YAML) define la configuración de uno o varios contenedores Docker usando Docker Compose, que permite lanzar servicios completos (como bases de datos, aplicaciones web, APIs, etc.) de manera sencilla.
+</p>
+
+## Comando 
+``` shell
+docker compose -f stack-rmr.yml up -d
+```
+
+### Explicación:
+  - -f: especifica el archivo YAML a usar.
+  - up: inicia los servicios.
+  - -d: modo detached (en segundo plano).
+
+### Resultado esperado de Docker Compose
+<p align="center">
+  <img src="images/YML.png" width="400"/>
+</p> 
+
+## Verifica que los contenedores están corriendo
+``` shell
+docker ps -a
+```
+
+### Resultado esperado de Contenedores
+<p align="center">
+  <img src="images/Contenedores.png" width="400"/>
 </p> 
 
 # Conclusión 
