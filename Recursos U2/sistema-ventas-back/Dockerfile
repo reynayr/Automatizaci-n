@@ -1,20 +1,20 @@
-# Usar node 18.17.1-alpine
+# Usar la imagen de node:18.17.1-alpine
 FROM node:18.17.1-alpine
 
-# Crear volumen /usr/src/app
-VOLUME /usr/src/app
+# Crear un volumen en /usr/src/app
+WORKDIR /usr/src/app
 
-# Copiar package.json y package-lock.json
+# Copiar los archivos package
 COPY package*.json .
 
 # Ejecutar npm install
 RUN npm install
 
-# Copiar el contenido al contenedor
+# Copiar todo el contenido al contenedor
 COPY . .
 
 # Exponer el puerto 3000
 EXPOSE 3000
 
-# Ejecutar CMD ["node", "index.js"]
+# Ejecutar en el CMD el comando node index.js
 CMD ["node", "index.js"]
